@@ -65,6 +65,28 @@ public:
     }
 
     // TODO add method removeAt here
+    int removeAt(int pos) {
+        // Step 1: FIND the num
+        for (int i = 0; i < size; i++) {
+            if (i == pos - 1) {
+                // Step 2: MOVE the elements to left
+                for (int j = i; j < size - 1; j++) {
+                    array[j] = array[j + 1];
+                }
+                // Step 3: Set the size
+                array[size - 1] = 0;
+                size = size - 1;
+                // Step 4: Check to reduce capacity
+                if (size <= 2.0 / 3 * capacity) {
+                    dynamic_deduce();
+                }
+                // Step 5: Return
+                return array[pos - 1];
+            }
+        }
+
+        return -1;
+    }
 
 
     void print() {
