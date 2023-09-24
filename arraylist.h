@@ -67,8 +67,10 @@ public:
     // TODO add method removeAt here
     int removeAt(int pos) {
         // Step 1: FIND the num
+        int retval = 0;
         for (int i = 0; i < size; i++) {
             if (i == pos - 1) {
+                retval = array[i];
                 // Step 2: MOVE the elements to left
                 for (int j = i; j < size - 1; j++) {
                     array[j] = array[j + 1];
@@ -81,7 +83,7 @@ public:
                     dynamic_deduce();
                 }
                 // Step 5: Return
-                return array[pos - 1];
+                return retval;
             }
         }
 
