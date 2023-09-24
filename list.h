@@ -7,5 +7,5 @@ public:
     virtual void print() = 0;
 
     // TODO add virtual method removeAt here
-
+    virtual int removeAt(int num) = 0;
 };
